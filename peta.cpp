@@ -19,7 +19,7 @@ char** BuatPeta(int n_peta){
             if (i == 0 || i == (n_peta-1) || j == 0 || j == (n_peta-1)){
                 peta[i][j] = 'x';
             } else {
-                peta[i][j] = char(i);
+                peta[i][j] = '-';
             }
         }
     }
@@ -34,17 +34,7 @@ void PrintPeta(char** peta, int n_peta){
         }
         cout << endl;
     }
-}
-
-void PrintViewKanan(char** peta, int n_peta){
-    cout << "Tampilan Peta Dilihat dari Kanan" << endl;
-    // Tuliskan implementasi untuk menampilkan peta apabila dilihat dari kanan
-    for (int i=0; i < n_peta; i++){
-        for (int j=0; j < n_peta; j++){
-            cout << peta[n_peta-j][i] << ' ';
-        }
-        cout << endl;
-    }
+    cout << endl;
 }
 
 void PrintViewKiri(char** peta, int n_peta){
@@ -52,8 +42,21 @@ void PrintViewKiri(char** peta, int n_peta){
     // Tuliskan implementasi untuk menampilkan peta apabila dilihat dari kiri
     for (int i=0; i < n_peta; i++){
         for (int j=0; j < n_peta; j++){
-           cout << peta[j][n_peta-i] << ' '; 
+            cout << peta[j][n_peta-i-1] << ' ';
         }
         cout << endl;
     }
+    cout << endl;
+}
+
+void PrintViewKanan(char** peta, int n_peta){
+    cout << "Tampilan Peta Dilihat dari Kanan" << endl;
+    // Tuliskan implementasi untuk menampilkan peta apabila dilihat dari kanan
+    for (int i=0; i < n_peta; i++){
+        for (int j=0; j < n_peta; j++){
+            cout << peta[n_peta-j-1][i] << ' ';
+        }
+        cout << endl;
+    }
+    cout << endl;
 }
